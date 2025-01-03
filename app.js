@@ -58,7 +58,7 @@ const planets = [
 
 let currentIndex = 0;
 
-function updateSliderPosition() {
+function updateSlider() {
   let bgObject = planets[currentIndex].bg;
   body.style.background = `url(${bgObject})`
 
@@ -68,7 +68,14 @@ function updateSliderPosition() {
     p.textContent = planets[currentIndex].description;
 }
 
-function animateImage(rotation) {
+function animateImage(rotation, bgPosition) {
+    body.animate([
+      { backgroundPosition: '0' },
+      { backgroundPosition: `${bgPosition}%` }
+    ], {
+      duration: 500,
+      iterations: 1
+  });
     img.animate([
         { transform: 'translateX(-50%) translateY(15%) rotate(0deg)' },
         { transform: `translateX(-50%) translateY(15%) rotate(${rotation}deg)` }
@@ -80,14 +87,14 @@ function animateImage(rotation) {
 
 prev.onclick = () => {
     currentIndex = (currentIndex === 0) ? planets.length - 1 : currentIndex - 1;
-    updateSliderPosition();
-    animateImage(-360);
+    updateSlider();
+    animateImage(-360, 100);
 };
 
 next.onclick = () => {
     currentIndex = (currentIndex === planets.length - 1) ? 0 : currentIndex + 1;
-    updateSliderPosition();
-    animateImage(360);
+    updateSlider();
+    animateImage(360, -100);
 };
 
-updateSliderPosition();
+updateSlider();
