@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body style="background: url(/images/bg8.jpg); background-size: cover;">
+  <main class="w-full h-[100vh] overflow-hidden relative"> 
+    
+    <img src="/images/mercury.png" alt="Mercury"
+    class="absolute inset-[50%] translate-x-[-50%] translate-y-[15%] w-[700px] md:w-[900px] aspect-[1] object-cover">
+    
+    <div class="flex justify-around items-end p-10 h-[100vh] relative">
+          <button id="prev" class="w-[50px] h-[50px] bg-[#eee5] hover:bg-[#242424] rounded-full active:scale-75">
+            <ion-icon name="chevron-back-outline" class="transition-all duration-100 text-3xl text-[#242424] hover:text-[#34acb4]"></ion-icon>
+          </button>
+          <button id="next" class="w-[50px] h-[50px] bg-[#eee5] hover:bg-[#242424] rounded-full active:scale-75">
+            <ion-icon name="chevron-forward-outline" class="transition-all duration-100 text-3xl text-[#242424] hover:text-[#34acb4]"></ion-icon>
+          </button>
+        </div>
+      </main>
+
+      <section class="description w-[100%]
+       translate-y-[150%] md:translate-y-[150%] absolute top-0 m-auto grid place-items-center">
+        <h2 class="text-[#eee] text-center text-4xl font-bold uppercase tracking-widest border-b-4 border-[#242424]"></h2>
+        <p class="w-[400px] text-[#eee] text-center p-6 backdrop-blur-sm shadow-[5px_5px_0px_#34acb4] rounded-2xl"></p>
+      </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
